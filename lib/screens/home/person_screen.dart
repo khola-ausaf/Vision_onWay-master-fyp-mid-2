@@ -21,16 +21,18 @@ class Person extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Vision OnWay',style: TextStyle(color: Color.fromARGB(255, 167, 124, 175),),),
-         backgroundColor: Color.fromARGB(255, 255, 255, 255),
-         leading: Icon(Icons.menu, color:Color.fromARGB(255, 167, 124, 175), )
-          
+          title: Text(
+            'Vision OnWay',
+            style: TextStyle(
+              color: Color.fromARGB(255, 167, 124, 175),
+            ),
+          ),
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          iconTheme: IconThemeData(color: Color.fromARGB(255, 167, 124, 175),),
+         
         ),
         drawer: new Drawer(
-          //backgroundColor: Color.fromARGB(255, 167, 124, 175),
-      
           child: new ListView(
-         
             children: [
               new ListTile(
                 title: new Text("Settings"),
@@ -46,7 +48,7 @@ class Person extends StatelessWidget {
               new ListTile(
                 title: new Text("Privacy"),
                 trailing: new Icon(Icons.privacy_tip_rounded),
-                  iconColor: Color.fromARGB(255, 167, 124, 175),
+                iconColor: Color.fromARGB(255, 167, 124, 175),
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.of(context).push(new MaterialPageRoute(
@@ -58,8 +60,6 @@ class Person extends StatelessWidget {
                 title: new Text("Contact Us"),
                 trailing: new Icon(Icons.email_rounded),
                 iconColor: Color.fromARGB(255, 167, 124, 175),
-
-                
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.of(context).push(new MaterialPageRoute(

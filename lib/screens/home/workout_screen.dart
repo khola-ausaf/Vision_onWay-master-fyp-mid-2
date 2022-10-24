@@ -32,7 +32,7 @@ class workout extends StatelessWidget {
                           child: Icon(Icons.calendar_month_outlined),
                         ),
                       ),
-                      Text("Good Morning John! ",
+                      Text("Good Morning Khola! ",
                        textAlign: TextAlign.start,
                          style: TextStyle(
                               color: Color.fromARGB(255, 136, 133, 133),

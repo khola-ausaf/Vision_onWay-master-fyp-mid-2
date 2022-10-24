@@ -22,8 +22,9 @@ dependencies:
   google_sign_in: ^5.1.0
   sign_button: ^2.0.1
   camera: ^0.10.0+1           #for displaying the camera...
-  video_player: ^2.4.7 
-  fl_chart: ^0.55.2       #for displaying videos...
+  video_player: ^2.4.7  #for displaying videos...
+  fl_chart: ^0.55.2   
+  smooth_page_indicator: ^1.0.0+2     
 
 dev_dependencies:
   flutter_test:
