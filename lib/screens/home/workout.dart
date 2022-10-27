@@ -1,7 +1,11 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:sign_in/screens/home/abs.dart';
 import 'package:sign_in/screens/home/body_screen.dart';
 import 'package:sign_in/screens/home/leg_screen.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+//import 'package:video_player/video_player.dart';
 
 class Workout extends StatefulWidget {
   const Workout({Key? key}) : super(key: key);
@@ -11,26 +15,54 @@ class Workout extends StatefulWidget {
 }
 
 class _WorkoutState extends State<Workout> {
-  PageController _controller = PageController(
-    initialPage: 0,
+  PageController _pageController = new PageController(
+        initialPage: 0,
   );
   @override
-  void dispose() {
-    _controller.dispose();
+    void dispose() {
+    _pageController.dispose();
     super.dispose();
   }
 
   Widget build(BuildContext context) {
-    return PageView(
-      controller: _controller,
-      children: [
-        Body(),
-        Leg(),
-        Abs(),
-      ],
-    
-    
-        
+    return Scaffold(
+      body: Stack(children: [
+        PageView(
+          controller: _pageController,
+          children: [
+            Body(),
+            Leg(),
+            Abs(),
+          ],
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: Center(child: SmoothPageIndicator(
+                controller: _pageController,
+                count: 3,
+                effect: WormEffect(
+                  activeDotColor: Color.fromARGB(255, 234, 194, 241),
+                  dotColor: Color.fromARGB(255, 230, 226, 238),
+                 // spacing: 10,
+                  dotHeight: 12,
+                  dotWidth: 12,
+                ),
+                
+                onDotClicked:(index) => _pageController.animateToPage(index, 
+                duration: Duration(milliseconds: 500), 
+                curve: Curves.easeInCubic),
+              )),
+            )
+          ],
+        )
+      ]),
     );
   }
 }
+
+

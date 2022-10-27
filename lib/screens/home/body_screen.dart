@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:sign_in/screens/home/congrulation.dart';
 import 'package:sign_in/screens/home/fday1.dart';
 import 'package:sign_in/screens/home/fday2.dart';
 import 'package:sign_in/screens/home/fday3.dart';
@@ -24,14 +25,14 @@ class Body extends StatelessWidget {
                 height: size.height * .700,
                 width: size.width * .700,
                 margin: EdgeInsets.only(
-                  left: 140,
+                  left: 100,
                   bottom: 80,
                 ),
                 decoration: BoxDecoration(
                   // color: Color.fromARGB(255, 204, 153, 214),
                   image: DecorationImage(
                       image: AssetImage(
-                        'assets/full body.png',
+                        'assets/fbody.png.png',
                       ),
                       fit: BoxFit.fitWidth),
                 )),
@@ -52,7 +53,7 @@ class Body extends StatelessWidget {
                 SizedBox(
                   height: 6.0,
                 ),
-                Text("do daily 10-15 mints ",
+                Text("Do daily 10-15 mints ",
                     textAlign: TextAlign.end,
                     style: TextStyle(
                         color: Color.fromARGB(255, 157, 38, 179),
@@ -72,7 +73,7 @@ class Body extends StatelessWidget {
                         fontWeight: FontWeight.w100)),
                 Spacer(),
                 SizedBox(
-                    height: 420,
+                    height: 360,
                     child: ListView(children: [
                       Container(
                         padding: EdgeInsets.all(10),
@@ -396,11 +397,32 @@ class Body extends StatelessWidget {
                           ],
                         ),
                       ),
-                     
-              ],
+                      //button 
+                       ElevatedButton(
+                            
+                              style: ElevatedButton.styleFrom(
+                                  minimumSize: Size(30,30),
+                                   primary:Color.fromARGB(255, 167, 124, 175)
+                                  //onPrimary: Color.fromARGB(255, 167, 124,170)
+                                  ),
+                              child: Text("->"),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Congrulation()),
+                                );
+                              })//button end
+                      
+                ],
             ),
           )
         ])
-          )])  );
+          )
+          
+          
+       
+          
+          ])  );
   }
 }
